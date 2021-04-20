@@ -7,6 +7,7 @@ import {
   KeyboardAvoidingView,
   Platform
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { Button } from '../components/Button';
 
@@ -14,6 +15,7 @@ import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
 export function UserIdentification() {
+  const navigation = useNavigation();
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
   const [name, setName] = useState<string>();
@@ -32,6 +34,9 @@ export function UserIdentification() {
     setName(value);
   }
 
+  function handleSubmit() {
+    navigation.navigate('Confirmation')
+  }
 
   return (
     <View style={styles.container}>
@@ -63,7 +68,7 @@ export function UserIdentification() {
               />
               
               <View style={styles.footer}>
-                <Button />
+                <Button title="Confirmar" onPress={handleSubmit}/>
               </View>
             </View>
           </View>
