@@ -43,6 +43,10 @@ export function UserIdentification() {
       return Alert.alert("Me diz como você se chama! 🌱")
     }
 
+    else if (name.length > 12) {
+      return Alert.alert("Digite um nome com menos de 12 caracteres! ")
+    }
+
     try {
       await AsyncStorage.setItem('@plantmanager:user', name);
       navigation.navigate('Confirmation', {
