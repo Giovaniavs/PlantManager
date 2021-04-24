@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://192.168.15.38:3333'
+  baseURL: 'https://plant-manager-json-server.herokuapp.com'
 });
 
 export default api;
